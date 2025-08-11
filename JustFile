@@ -1,0 +1,22 @@
+options := "-O3 -Wall --std=c2x"
+output_dir := "binary"
+output := output_dir + "/l2shift"
+
+build:
+    @mkdir -p {{output_dir}}
+    @clang {{options}} $(find src -name '*.c') -o {{output}}_linux
+
+build-windows:
+    @mkdir -p {{output_dir}}
+    @clang --target=x86_64-w64-windows-gnu {{options}} $(find src -name '*.c') -o {{output}}_windows.exe
+
+build-macos:
+    @mkdir -p {{output_dir}}
+    @clang --target=x86_64-apple-darwin {{options}} $(find src -name '*.c') -o {{output}}_macos_x86
+    @clang --target=arm64-apple-darwin {{options}} $(find src -name '*.c') -o {{output}}_macos_arm64
+
+run-linux *args: build
+    @sudo ./{{output}}_linux {{args}}
+
+clean:
+    @rm -f {{output}} *.o
