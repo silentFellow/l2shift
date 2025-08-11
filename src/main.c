@@ -24,5 +24,11 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  if (argc == 2) {
+    mac = generateMac(argv[1], NULL);
+  } else {
+    mac = generateMac(argv[1], argv[2]);
+  }
+
   return 0;
 }

@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
+Mac generateMac(char *, char *);
 void cleanContext(void);
 void exitWithError(const char *);
 void printHelp(void);
