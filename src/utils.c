@@ -1,5 +1,22 @@
 /* utils.c */
+#include "types.h"
 #include <stdio.h>
+#include <stdlib.h>
+
+extern Mac mac;
+
+void cleanContext() {
+  if (mac.formatted_addr)
+    free(mac.formatted_addr);
+}
+
+void exitWithError(const char *message) {
+  fprintf(stderr, "Error: %s\n", message);
+
+  cleanContext();
+
+  exit(EXIT_FAILURE);
+}
 
 void printHelp() {
   printf("Usage: altermac <interface> [<custom_mac>]\n");

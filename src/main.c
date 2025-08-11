@@ -8,6 +8,8 @@
 
 int main(int, char **);
 
+Mac mac = {0};
+
 int main(int argc, char *argv[]) {
   srand(getpid());
 
