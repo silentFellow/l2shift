@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (strcmp(argv[1], "--version") == 0 || strcmp(argv[1], "-v") == 0) {
-    printf("altermac version: 1.0.0\n");
+    printf("l2shift version: 1.0.0\n");
     return 0;
   }
 

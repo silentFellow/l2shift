@@ -1,5 +1,5 @@
-#ifndef ALTERMAC_H
-#define ALTERMAC_H
+#ifndef L2SHIFT_H
+#define L2SHIFT_H
 
 #if defined(__WIN32) || defined(__WIN64)
   #define PLATFORM_WINDOWS

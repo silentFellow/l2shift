@@ -1,6 +1,6 @@
 /* platform_linux.c */
 
-#include "../altermac.h"
+#include "../l2shift.h"
 
 #ifdef PLATFORM_LINUX
 
