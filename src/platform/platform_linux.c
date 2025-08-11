@@ -20,6 +20,8 @@
 
 bool set_interface_state(const char *, int);
 
+bool IsRunningAsAdmin() { return geteuid() == 0; }
+
 char *formatAddr(const char *addr) {
   if (strlen(addr) != 12) {
     return NULL;

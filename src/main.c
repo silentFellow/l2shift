@@ -25,6 +25,11 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  if (!IsRunningAsAdmin()) {
+    fprintf(stderr, "Error: You must run this program as root.\n");
+    return 1;
+  }
+
   if (argc == 2) {
     mac = generateMac(argv[1], NULL);
   } else {
