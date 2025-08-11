@@ -1,5 +1,6 @@
 /* main.c */
 
+#include "platform/platform.h"
 #include "utils.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,6 +33,10 @@ int main(int argc, char *argv[]) {
 
   if (!validMac(mac.mac_str))
     exitWithError("Invalid MAC address");
+
+  if (changeMac(mac)) {
+    printf("MAC address changed successfully to %s\n", mac.formatted_addr);
+  }
 
   return 0;
 }

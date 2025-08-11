@@ -1,3 +1,5 @@
+/* l2shift.h */
+
 #ifndef L2SHIFT_H
 #define L2SHIFT_H
 
