@@ -30,5 +30,8 @@ int main(int argc, char *argv[]) {
     mac = generateMac(argv[1], argv[2]);
   }
 
+  if (!validMac(mac.mac_str))
+    exitWithError("Invalid MAC address");
+
   return 0;
 }

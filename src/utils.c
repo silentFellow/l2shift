@@ -83,6 +83,26 @@ void hexToString(int64 hex, char *buffer, size_t size) {
   snprintf(buffer, size, "%012llx", (unsigned long long)hex);
 }
 
+bool validMac(const char *addr) {
+  if (strlen(addr) != 12)
+    return false;
+
+  bool nonZero = false;
+  bool nonMax = false;
+  for (int i = 0; i < 12; i++) {
+    if (!isxdigit(addr[i]))
+      return false;
+
+    if (addr[i] != '0')
+      nonZero = true;
+
+    if (addr[i] != 'f' && addr[i] != 'F')
+      nonMax = true;
+  }
+
+  return nonZero && nonMax;
+}
+
 void cleanContext() {
   if (mac.formatted_addr)
     free(mac.formatted_addr);
